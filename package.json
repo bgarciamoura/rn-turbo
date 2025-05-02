@@ -5,7 +5,15 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,js,md,json}\"",
+    "mobile:start": "turbo run start --filter=mobile",
+    "mobile:ios": "turbo run ios --filter=mobile",
+    "mobile:android": "turbo run android --filter=mobile",
+    "mobile:lint": "turbo run lint --filter=mobile",
+    "mobile:build:dev": "cd apps/mobile && eas build --profile development --platform all",
+    "mobile:build:preview": "cd apps/mobile && eas build --profile preview --platform all",
+    "mobile:build:prod": "cd apps/mobile && eas build --profile production --platform all",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
